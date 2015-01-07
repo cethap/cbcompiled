@@ -1,1 +1,1 @@
-web: node ./bin/codebox.js
+web: node ./bin/codebox.js run ./proyecto
