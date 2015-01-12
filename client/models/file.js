@@ -599,7 +599,7 @@ define([
         actionCreate: function(e) {
             var that = this;
             if (e) e.preventDefault();
-            return dialogs.prompt("Create a new file", "", "newfile.txt").then(function(name) {
+            return dialogs.prompt("Crear un nuevo archivo", "", "newfile.txt").then(function(name) {
                 if (name.length > 0) {
                     return that.createFile(name);
                 }
@@ -611,7 +611,7 @@ define([
         actionMkdir: function(e) {
             var that = this;
             if (e) e.preventDefault();
-            dialogs.prompt("Create a new directory", "", "newdirectory").then(function(name) {
+            dialogs.prompt("Cerar una nueva carpeta", "", "newdirectory").then(function(name) {
                 if (name.length > 0) {
                     return that.mkdir(name);
                 }
@@ -624,7 +624,7 @@ define([
             var that = this;
             if (e) e.preventDefault();
 
-            return dialogs.prompt("Rename", "", this.get("name")).then(function(name) {
+            return dialogs.prompt("Renombrar", "", this.get("name")).then(function(name) {
                 if (name.length > 0) {
                     return that.rename(name);
                 }
@@ -730,14 +730,14 @@ define([
                 if (!that.isRoot()) {
                     menu.push({
                         'type': "action",
-                        'title': "Rename...",
+                        'title': "Renombrar...",
                         'action': function() {
                             return that.actionRename();
                         }
                     });
                     menu.push({
                         'type': "action",
-                        'title': "Delete "+(that.isDirectory() ? "Folder" : "File"),
+                        'title': "Eliminar "+(that.isDirectory() ? "Carpeta" : "Archivo"),
                         'action': function() {
                             return that.actionRemove();
                         }
@@ -748,14 +748,14 @@ define([
                 if (!that.isDirectory()) {
                     menu.push({
                         'type': "action",
-                        'title': "Copy",
+                        'title': "Copiar",
                         'action': function() {
                             clipboard.setData("file", that.path());
                         }
                     });
                     menu.push({
                         'type': "action",
-                        'title': "Cut",
+                        'title': "Cortar",
                         'action': function() {
                             clipboard.setData("file", that.path(), {
                                 cut: true
@@ -765,7 +765,7 @@ define([
                 } else {
                     menu.push({
                         'type': "action",
-                        'title': "Paste",
+                        'title': "Pegar",
                         'flags': (!clipboard.hasData("file") ? "disabled" : ""),
                         'action': function() {
                             if (clipboard.hasData("file")) {
@@ -806,26 +806,26 @@ define([
                     // Directory
                     menu.push({
                         'type': "action",
-                        'title': "New file",
+                        'title': "Nuevo archivo",
                         'action': function() {
                             return that.actionCreate();
                         }
                     });
                     menu.push({
                         'type': "action",
-                        'title': "New folder",
+                        'title': "Nueva carpeta",
                         'action': function() {
                             return that.actionMkdir();
                         }
                     });
                     menu.push({
                         'type': "menu",
-                        'title': "Add",
+                        'title': "Añadir",
                         'offline': false,
                         'menu': [
                             {
                                 'type': "action",
-                                'title': "Files",
+                                'title': "Archivos",
                                 'offline': false,
                                 'action': function() {
                                     that.actionUpload();
@@ -833,7 +833,7 @@ define([
                             },
                             {
                                 'type': "action",
-                                'title': "Directories",
+                                'title': "Carpetas",
                                 'offline': false,
                                 'action': function() {
                                     that.actionUpload({
@@ -846,14 +846,14 @@ define([
                     menu.push({ 'type': "divider" });
                     menu.push({
                         'type': "action",
-                        'title': "Refresh",
+                        'title': "Recargar",
                         'action': function() {
                             return that.actionRefresh();
                         }
                     });
                     menu.push({
                         'type': "action",
-                        'title': "Find in Folder",
+                        'title': "Encontrar en carpeta",
                         'action': function() {
                             return Command.run("code.search", {
                                 'path': that.path()
@@ -862,7 +862,7 @@ define([
                     });
                     menu.push({
                         'type': "action",
-                        'title': "Open Terminal",
+                        'title': "Abrir Terminal",
                         'action': function() {
                             return Command.run("terminal.open", null, {
                                 'cwd': that.path()
@@ -872,7 +872,7 @@ define([
                 } else {
                     menu.push({
                         'type': "action",
-                        'title': "Download",
+                        'title': "Descargar",
                         'action': function() {
                             that.actionDownload();
                         }
@@ -880,7 +880,7 @@ define([
                     menu.push({ 'type': "divider" });
                     menu.push({
                         'type': "action",
-                        'title': "Run",
+                        'title': "Correr",
                         'offline': false,
                         'action': function() {
                             that.actionRun();

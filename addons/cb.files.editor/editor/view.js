@@ -56,7 +56,7 @@ define([
 
             // Syntax menu command
             var syntaxMenu = new Command({}, {
-                'title': "Syntax",
+                'title': "Sintaxis",
                 'type': "menu"
             });
             syntaxMenu.menu.add(_.map(aceModes.modesByName, function(mode, name) {
@@ -71,7 +71,7 @@ define([
             // Toggle collaboration
             this.collaborationToggle = new Command({}, {
                 'type': "checkbox",
-                'title': "Toggle Collaboration Mode",
+                'title': "Activar/Descativar modo de colaboración",
                 'flags': this.model.isNewfile() ? "hidden": "",
                 'offline': false,
                 'action': function(state) {
@@ -84,14 +84,14 @@ define([
 
             // Collaborators
             this.collaboratorsMenu = new Command({}, {
-                'title': "Collaborators",
+                'title': "Colaboradores",
                 'type': "menu",
                 'flags': "disabled"
             });
 
             // Statusbar
             this.editorStatusCommand = new Command({}, {
-                'title': "Line 1, Column 1",
+                'title': "Linea 1, Columna 1",
                 'type': "label"
             });
             this.tab.statusbar.add(this.editorStatusCommand);
@@ -102,7 +102,7 @@ define([
             this.tab.menu.menuSection([
                 {
                     'type': "action",
-                    'title': "Save",
+                    'title': "Guardar",
                     'shortcuts': [
                         "mod+s"
                     ],
@@ -113,7 +113,7 @@ define([
                 },
                 {
                     'type': "action",
-                    'title': "Run File",
+                    'title': "Correr Archivo",
                     'shortcuts': [
                         "mod+r"
                     ],

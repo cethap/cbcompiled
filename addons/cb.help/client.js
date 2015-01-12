@@ -13,8 +13,8 @@ define([
 
     // Command to open changelog
     var commandChanges = Command.register("help.changes", {
-        'category': "Help",
-        'title': "Open Release Notes",
+        'category': "Ayuda",
+        'title': "Abrir notas de release",
         'action': function(title) {
             return rpc.execute("box/changes").then(function(changes) {
                 return files.openNew(title || "Release Notes", changes.content);
@@ -24,8 +24,8 @@ define([
 
     // Command to open welcome
     var commandWelcome = Command.register("help.welcome", {
-        'category': "Help",
-        'title': "Welcome",
+        'category': "Ayuda",
+        'title': "Bienvenido",
         'action': function(title) {
             return files.openNew(title || "Welcome.md", welcomeText);
         }
@@ -33,15 +33,15 @@ define([
 
 
     // Add menu
-    menu.register("help", {
-        title: "Help",
+    menu.register("Ayuda", {
+        title: "Ayuda",
         position: 100
     }).menuSection([
         commandChanges,
         {
             'id': "help.documentation",
-            'category': "Help",
-            'title': "Documentation",
+            'category': "Ayuda",
+            'title': "Documentación",
             'description': "Open Documentation",
             'shortcuts': ['?'],
             'offline': false,
@@ -52,8 +52,8 @@ define([
     ]).menuSection([
         {
             'id': "help.feedback",
-            'category': "Help",
-            'title': "Submit Feedback",
+            'category': "Ayuda",
+            'title': "Enviar Feedback",
             'offline': false,
             'action': function() {
                 window.open("https://github.com/FriendCode/codebox/issues");

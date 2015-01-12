@@ -8,7 +8,7 @@ define([
     
     // Feedback
     statusbar.register("statusbar.sendfeedback", {
-        title: "Send Feedback",
+        title: "Enviar Feedback",
         position: 5,
         offline: false,
         search: false

@@ -18,7 +18,7 @@ define([
     // Settings for files manager
     var settings = settings.add({
         'namespace': "files",
-        'title': "Files",
+        'title': "Archivos",
         'fields': {}
     });
     var userSettings = user.settings("files");
@@ -226,7 +226,7 @@ define([
 
     // Open a new file
     var openNew = function(name, content, options) {
-        name = name || "untitled";
+        name = name || "Sin título";
 
         // Create a temporary file
         var f = new File({

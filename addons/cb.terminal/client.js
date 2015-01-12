@@ -67,8 +67,8 @@ define([
     // Add opening command
     var command = commands.register("terminal.open", {
         category: "Terminal",
-        title: "New Terminal",
-        description: "New Tab Terminal",
+        title: "Nuevo Terminal",
+        description: "Nuevo Tab Terminal",
         icons: {
             'default': "terminal",
         },
@@ -107,7 +107,7 @@ define([
     // List terminals menu
     var terminalsList = Command.register("terminal.list", {
         category: "Terminal",
-        title: "Open Terminals",
+        title: "Abrir Terminales",
         type: "menu",
         offline: false,
         search: false

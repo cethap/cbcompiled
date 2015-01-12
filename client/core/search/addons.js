@@ -13,7 +13,7 @@ define([
 
     var addonsSettings = settings.add({
         'namespace': "manager",
-        'title': "Addons",
+        'title': "Plugins",
         'defaults': {
             'registry': "https://api.codebox.io"
         },

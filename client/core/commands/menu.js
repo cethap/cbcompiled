@@ -13,13 +13,13 @@ define([
     var menu = new MenubarView();
     
     menu.register("view", {
-        title: "View",
+        title: "Ver",
         position: 5
     }).menuSection({
         'id': "themes.settings",
         'category': "View",
-        'title': "Settings",
-        'description': "Open Theme and View Settings",
+        'title': "Propiedades",
+        'description': "Abrir propiedades de tema y vista",
         'offline': false,
         'action': function() {
             settings.open("themes");
@@ -31,13 +31,13 @@ define([
     ]);
 
     menu.register("file", {
-        title: "File",
+        title: "Archivo",
         position: 0
     }).menuSection([{
         'id': "quit",
         'category': "Application",
-        'title': "Quit",
-        'description': "Close Current Session",
+        'title': "Salir",
+        'description': "Cerrar sesión actual",
         'shortcuts': [
             "alt+q"
         ],

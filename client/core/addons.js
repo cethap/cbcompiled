@@ -13,14 +13,14 @@ define([
     // Command to install with an url
     Command.register("addons.install", {
         category: "Add-ons",
-        title: "Install",
+        title: "Instalar",
         description: "Install with GIT Url",
         offline: false,
         action: function(url) {
             return Q()
             .then(function() {
                 if (url) return url;
-                return dialogs.prompt("Install a new addon", "GIT url for the addon:", "");
+                return dialogs.prompt("Instalar nuevo addon", "GIT url para el addon:", "");
             })
             .then(function(_url) {
                 return operations.start("addon.install", function(op) {
@@ -35,21 +35,21 @@ define([
     // Command to uninstall from a name
     Command.register("addons.uninstall", {
         category: "Add-ons",
-        title: "Uninstall",
-        description: "Uninstall with name",
+        title: "Desinstalar",
+        description: "Desinstalar con nombre",
         offline: false,
         search: false,
         action: function(name) {
             return Q()
             .then(function() {
                 if (name) return name;
-                return dialogs.prompt("Uninstall an addon", "Name of the addon:", "");
+                return dialogs.prompt("Desinstalar un addon", "Nombre del addon:", "");
             })
             .then(function(_name) {
                 return operations.start("addon.uninstall", function(op) {
                     return addons.uninstall(_name);
                 }, {
-                    title: "Uinstalling add-on"
+                    title: "Desinstalando add-on"
                 });
             })
         }

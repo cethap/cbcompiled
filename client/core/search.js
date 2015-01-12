@@ -22,7 +22,7 @@ define([
             // Settings
             this.settings = settings.add({
                 'namespace': "search",
-                'title': "Search",
+                'title': "Buscar",
                 'fields': {}
             });
 

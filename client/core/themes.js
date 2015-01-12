@@ -24,7 +24,7 @@ define([
     // Add settings
     var themeSettings = settings.add({
         'namespace': "themes",
-        'title': "Themes",
+        'title': "Temas",
         'defaults': {
             'theme': 'dark'
         },

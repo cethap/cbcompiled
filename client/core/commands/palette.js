@@ -9,7 +9,7 @@ define([
     });
 
     commands.register("palette.toggle", {
-        title: "Palette",
+        title: "Paleta",
         description: "Toggle Command Palette",
         icons: {
             'default': "search",

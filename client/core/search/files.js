@@ -9,7 +9,7 @@ define([
     // Search for files
     search.handler({
         'id': "files",
-        'title': "Files"
+        'title': "Archivos"
     }, function(query) {
         if (!query) return [];
 
@@ -35,11 +35,11 @@ define([
     // Search for recent opned files
     search.handler({
         'id': "recentfiles",
-        'title': "Recent Files"
+        'title': "Archivos recientes"
     }, function(query) {
         return files.recent.map(function(file) {
             return {
-                "category": "Recent Files",
+                "category": "Archivos recientes",
                 "title": file.path(),
                 "position": 0,
                 "icons": {

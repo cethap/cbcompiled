@@ -19,7 +19,7 @@ define([
 
     // Add menu
     menu.register("project", {
-        title: "Project",
+        title: "Proyecto",
         offline: false
     }).menuSection([
         autorun.command,
@@ -28,7 +28,7 @@ define([
         {
             'id': "project.build",
             'category': "Project",
-            'title': "Build",
+            'title': "Construir",
             'offline': false,
             'action': function() {
                 return autorun.command.run({
@@ -42,7 +42,7 @@ define([
         {
             'id': "project.clean",
             'category': "Project",
-            'title': "Clean",
+            'title': "Limpiar",
             'offline': false,
             'action': function() {
                 return autorun.command.run({
@@ -58,7 +58,7 @@ define([
 
             'id': "project.ports.refresh",
             'category': "Project",
-            'title': "Refresh Ports",
+            'title': "Recargar puertos",
             'offline': false,
             'action': ports.update
         },

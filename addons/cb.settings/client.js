@@ -7,7 +7,7 @@ define(["views/dialog"], function(SettingsDialog) {
     // Add opening command
     var command = Command.register("settings", {
         category: "Application",
-        title: "Settings",
+        title: "Propiedades",
         icons: {
             'default': "cog",
         },

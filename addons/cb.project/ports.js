@@ -9,7 +9,7 @@ define([], function() {
     // HTTP Ports
     var httpPorts = Command.register("project.ports", {
         'category': "Project",
-        'title': "Running Ports",
+        'title': "Corriendo Puertos",
         'type': "menu",
         'offline': false,
         'search': false

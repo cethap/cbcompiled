@@ -20,7 +20,7 @@ define([
     var normResults = function(results) {
         // Header
         var buffer = 'Searching 1 file for "'+results.options.query+'"';
-        if (results.options.casesensitive) buffer += " (case sensitive)"
+        if (results.options.casesensitive) buffer += " (Caso exacto)"
         buffer += '\n\n';
 
         _.each(results.files, function(lines, path) {
@@ -59,7 +59,7 @@ define([
                     return "Error during search: "+(err.message || err);
                 })
                 .then(function(buffer) {
-                    return files.openNew("Find Results", buffer);
+                    return files.openNew("Buscar Resultados", buffer);
                 });
             };
 
@@ -75,26 +75,26 @@ define([
 
     // Command search code
     var commandSearch = Command.register("code.search", {
-        title: "Find in Files",
-        category: "Find",
+        title: "Buscar en Archivos",
+        category: "Buscar",
         shortcuts: [
             "mod+shift+f"
         ],
-        action: searchCommandHandler("Find in Files", {
+        action: searchCommandHandler("Buscar en Archivos", {
             'query': {
-                'label': "Find",
+                'label': "Buscar",
                 'type': "text"
             },
             'path': {
-                'label': "Where",
+                'label': "Cuando",
                 'type': "text"
             },
             'regexp': {
-                'label': "Regular expression",
+                'label': "Expersiones regulares",
                 'type': "checkbox"
             },
             'casesensitive': {
-                'label': "Case sensitive",
+                'label': "Caso exacto",
                 'type': "checkbox"
             },
             'wholeword': {
@@ -106,28 +106,28 @@ define([
 
     // Command replace code
     var commandReplace = Command.register("code.replace", {
-        title: "Replace in Files",
-        category: "Find",
+        title: "Reemplazar en archivos",
+        category: "Buscar",
         shortcuts: [],
-        action: searchCommandHandler("Find and Replace in Files", {
+        action: searchCommandHandler("Buscar and Replace in Files", {
             'query': {
-                'label': "Find",
+                'label': "Buscar",
                 'type': "text"
             },
             'path': {
-                'label': "Where",
+                'label': "Cuando",
                 'type': "text"
             },
             'replacement': {
-                'label': "Replace",
+                'label': "Reemplazar",
                 'type': "text"
             },
             'regexp': {
-                'label': "Regular expression",
+                'label': "Expersiones regulares",
                 'type': "checkbox"
             },
             'casesensitive': {
-                'label': "Case Sensitive",
+                'label': "Caso exacto",
                 'type': "checkbox"
             },
             'wholeword': {
@@ -140,9 +140,9 @@ define([
     })
 
 
-    // Create find menu
-    menu.register("find", {
-        title: "Find",
+    // Create Buscar menu
+    menu.register("Buscar", {
+        title: "Buscar",
         position: 5
     }).menuSection([
         commandSearch,

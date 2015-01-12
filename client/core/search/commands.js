@@ -8,7 +8,7 @@ define([
     // Search for commands
     search.handler({
         'id': "commands",
-        'title': "Command"
+        'title': "Comandos"
     }, function(query) {
         return Command.all.filter(function(command) {
             return (

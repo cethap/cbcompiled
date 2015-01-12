@@ -11,13 +11,13 @@ define([
 
     // Add files panels
     var panel = panels.register("files", PanelFilesView, {
-        title: "Folders"
+        title: "Carpetas"
     });
     
     // Open files panel
     panel.connectCommand(commands.register("files.tree.open", {
         category: "Panels",
-        title: "Files",
+        title: "Archivos",
         description: "Open Files Panel",
         icons: {
             'default': "folder-o",
@@ -31,7 +31,7 @@ define([
     // Recents files
     var recentFiles = Command.register({
         'type': "menu",
-        'title': "Open Recent"
+        'title': "Abrir Reciente"
     });
     files.recent.on("add remove reset", function() {
         recentFiles.menu.reset(files.recent.map(function(file) {
@@ -51,7 +51,7 @@ define([
         {
             'id': "files.file.new",
             'category': "Files",
-            'title': "New File",
+            'title': "Nuevos Archivos",
             'shortcuts': ["alt+shift+n"],
             'action': function() {
                 files.openNew()
@@ -59,7 +59,7 @@ define([
         }, {
             'id': "files.folder.create",
             'category': "Files",
-            'title': "New Folder",
+            'title': "Nueva Carpeta",
             'shortcuts': ["alt+shift+f"],
             'action': function() {
                 box.root.actionMkdir();
@@ -72,7 +72,7 @@ define([
         {
             'id': "workspace.save.zip",
             'category': "Files",
-            'title': "Save Project As TAR.GZ",
+            'title': "Guardar proyecto como TAR.GZ",
             'offline': false,
             'action': function() {
                 window.open("/export/targz");

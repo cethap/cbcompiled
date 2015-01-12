@@ -23,7 +23,7 @@ define(["views/dialog"], function(GitDialog) {
 
     // Branches menu
     var branchesMenu = Command.register({
-        'title': "Switch To Branch",
+        'title': "Seleccionar un Branch",
         'type': "menu",
         'offline': false
     });
@@ -90,7 +90,7 @@ define(["views/dialog"], function(GitDialog) {
 
     // Add menu
     var gitMenu = menu.register("git", {
-        title: "Repository",
+        title: "Repositorio",
         offline: false
     });
 
@@ -102,14 +102,14 @@ define(["views/dialog"], function(GitDialog) {
         if (!state) {
             gitMenu.menuSection([
                 {
-                    'title': "No GIT Repository detected",
+                    'title': "Ningun Repositorio GIT detectado",
                     'type': "label",
                     'icons': {
                         'menu': "warning",
                     }
                 },
                 {
-                    'title': "Initialize Local Repository",
+                    'title': "Inicializar Repositorio Local",
                     'offline': false,
                     'action': function() {
                         return operations.start("git.init", function(op) {
@@ -120,7 +120,7 @@ define(["views/dialog"], function(GitDialog) {
                     }
                 },
                 {
-                    'title': "Clone Remote Repository",
+                    'title': "Clonar Repositorio Remoto",
                     'offline': false,
                     'action': function() {
                         return operations.start("git.clone", function(op) {
@@ -135,7 +135,7 @@ define(["views/dialog"], function(GitDialog) {
                                 });
                             });
                         }, {
-                            title: "Cloning GIT repository"
+                            title: "Clonando repositorio GIT"
                         });
                     }
                 }
@@ -152,7 +152,7 @@ define(["views/dialog"], function(GitDialog) {
                 }
             ]).menuSection([
                 {
-                    'title': "Synchronize",
+                    'title': "Sincronizar",
                     'shortcuts': ["mod+S"],
                     'offline': false,
                     'action': function() {
@@ -163,12 +163,12 @@ define(["views/dialog"], function(GitDialog) {
                                 });
                             });
                         }, {
-                            title: "Pushing & Pulling"
+                            title: "Publicando y Recibiendo"
                         });
                     }
                 },
                 {
-                    'title': "Push",
+                    'title': "Publicar",
                     'shortcuts': ["mod+P"],
                     'offline': false,
                     'action': function() {
@@ -179,12 +179,12 @@ define(["views/dialog"], function(GitDialog) {
                                 });
                             });
                         }, {
-                            title: "Pushing"
+                            title: "Publicando"
                         });
                     }
                 },
                 {
-                    'title': "Pull",
+                    'title': "Recibir",
                     'shortcuts': ["shift+mod+P"],
                     'offline': false,
                     'action': function() {
@@ -195,46 +195,46 @@ define(["views/dialog"], function(GitDialog) {
                                 });
                             });
                         }, {
-                            title: "Pulling"
+                            title: "Recibiendo"
                         });
                     }
                 }
             ]).menuSection([
                 branchesMenu,
                 {
-                    'title': "Refresh branches",
+                    'title': "Recargar branches",
                     'offline': false,
                     'action': updateBranchesMenu,
                 }
             ]).menuSection([
                 {
-                    'title': "Create a branch",
+                    'title': "Crear un branch",
                     'offline': false,
                     'action': function() {
-                        dialogs.prompt("Create a branch", "Enter the name for the new branch:").then(function(name) {
+                        dialogs.prompt("Create un branch", "Enter the name for the new branch:").then(function(name) {
                             if (!name) return;
                             operations.start("git.branch.create", function(op) {
                                 return rpc.execute("git/branch/create", {
                                     'name': name
                                 })
                             }, {
-                                title: "Creating branch '"+name+"'"
+                                title: "Creando branch '"+name+"'"
                             });
                         });
                     }
                 },
                 {
-                    'title': "Delete a branch",
+                    'title': "Eliminar un branch",
                     'offline': false,
                     'action': function() {
-                        dialogs.prompt("Delete a branch", "Enter the name of the branch you want to delete:").then(function(name) {
+                        dialogs.prompt("Eliminar un branch", "Enter the name of the branch you want to delete:").then(function(name) {
                             if (!name) return;
                             operations.start("git.branch.delete", function(op) {
                                 return rpc.execute("git/branch/delete", {
                                     'name': name
                                 })
                             }, {
-                                title: "Deleting branch '"+name+"'"
+                                title: "Eliminando branch '"+name+"'"
                             }).then(updateBranchesMenu);
                         });
                     }
